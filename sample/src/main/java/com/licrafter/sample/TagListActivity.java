@@ -1,10 +1,10 @@
-package com.licrafter.sample;
+﻿package com.licrafter.sample;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,18 +48,18 @@ public class TagListActivity extends AppCompatActivity {
             final TagViewGroup.OnTagGroupClickListener listener = new TagViewGroup.OnTagGroupClickListener() {
                 @Override
                 public void onCircleClick(TagViewGroup container) {
-                    Toast.makeText(TagListActivity.this, "点击中心圆", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TagListActivity.this, "鐐瑰嚮涓績鍦?, Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onTagClick(TagViewGroup container, ITagView tag, int position) {
-                    Toast.makeText(TagListActivity.this, "点击Tag->" + DataRepo.tagGroupList.get(holder
+                    Toast.makeText(TagListActivity.this, "鐐瑰嚮Tag->" + DataRepo.tagGroupList.get(holder
                             .getAdapterPosition() % DataRepo.tagGroupList.size()).getTags().get(position).getName(), Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onLongPress(final TagViewGroup group) {
-                    Toast.makeText(TagListActivity.this, "点击中心圆", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TagListActivity.this, "鐐瑰嚮涓績鍦?, Toast.LENGTH_SHORT).show();
                 }
             };
             holder.imageView.setTagGroupClickListener(listener);
@@ -88,3 +88,4 @@ public class TagListActivity extends AppCompatActivity {
         }
     }
 }
+

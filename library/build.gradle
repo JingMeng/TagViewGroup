@@ -3,8 +3,11 @@ apply plugin: 'kotlin-android'
 apply from: new File('../dependence.gradle')
 
 android {
+    compileOptions { sourceCompatibility JavaVersion.VERSION_11; targetCompatibility JavaVersion.VERSION_11 }
+    kotlinOptions { jvmTarget = '11' }
+    namespace 'com.licrafter.tagview'
     compileSdkVersion project.ext.targetVersion
-    buildToolsVersion "${project.ext.supportLib}"
+    
 
     defaultConfig {
         minSdkVersion project.ext.minVersion
@@ -12,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -20,6 +23,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
     }
     sourceSets {
         main {
@@ -30,14 +34,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    api "com.android.support:appcompat-v7:${project.ext.supportLib}"
-    testCompile "junit:junit:${project.ext.junit}"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api "androidx.appcompat:appcompat:1.6.1"
+    testImplementation "junit:junit:${project.ext.junit}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 repositories {
     mavenCentral()
 }
+
+

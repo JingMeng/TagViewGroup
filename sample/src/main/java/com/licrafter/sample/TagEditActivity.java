@@ -1,9 +1,9 @@
-package com.licrafter.sample;
+﻿package com.licrafter.sample;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,7 +18,7 @@ import com.licrafter.tagview.views.ITagView;
 
 /**
  * author: shell
- * date 2016/12/30 下午9:08
+ * date 2016/12/30 涓嬪崍9:08
  **/
 public class TagEditActivity extends AppCompatActivity implements View.OnClickListener
         , TagEditDialog.OnTagEditDialogClickListener {
@@ -63,7 +63,7 @@ public class TagEditActivity extends AppCompatActivity implements View.OnClickLi
     private TagViewGroup.OnTagGroupClickListener mTagGroupClickListener = new TagViewGroup.OnTagGroupClickListener() {
         @Override
         public void onCircleClick(TagViewGroup container) {
-            Toast.makeText(TagEditActivity.this, "点击中心圆", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TagEditActivity.this, "鐐瑰嚮涓績鍦?, Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -74,19 +74,19 @@ public class TagEditActivity extends AppCompatActivity implements View.OnClickLi
         @Override
         public void onLongPress(final TagViewGroup group) {
             new AlertDialog.Builder(TagEditActivity.this)
-                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("鍙栨秷", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
                         }
                     })
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("纭畾", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             mTagImageView.removeTagGroup(group);
                             dialog.dismiss();
                         }
-                    }).setTitle("删除标签组").setMessage("你确定要删除该标签组吗？")
+                    }).setTitle("鍒犻櫎鏍囩缁?).setMessage("浣犵‘瀹氳鍒犻櫎璇ユ爣绛剧粍鍚楋紵")
                     .create().show();
         }
     };
@@ -109,3 +109,4 @@ public class TagEditActivity extends AppCompatActivity implements View.OnClickLi
         mDialog.dismiss();
     }
 }
+

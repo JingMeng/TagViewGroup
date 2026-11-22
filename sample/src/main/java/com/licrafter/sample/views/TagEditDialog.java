@@ -1,8 +1,8 @@
-package com.licrafter.sample.views;
+﻿package com.licrafter.sample.views;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * author: shell
- * date 2017/1/4 上午10:46
+ * date 2017/1/4 涓婂崍10:46
  **/
 public class TagEditDialog extends Dialog implements View.OnClickListener {
 
@@ -102,3 +102,4 @@ public class TagEditDialog extends Dialog implements View.OnClickListener {
         void onTagGroupCreated(TagGroupModel group);
     }
 }
+

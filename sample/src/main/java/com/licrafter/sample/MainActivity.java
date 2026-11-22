@@ -1,7 +1,7 @@
-package com.licrafter.sample;
+﻿package com.licrafter.sample;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -63,17 +63,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TagViewGroup.OnTagGroupClickListener mTagGroupClickListener = new TagViewGroup.OnTagGroupClickListener() {
         @Override
         public void onCircleClick(TagViewGroup container) {
-            Toast.makeText(MainActivity.this, "点击中心圆", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "鐐瑰嚮涓績鍦?, Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onTagClick(TagViewGroup container, ITagView tag, int position) {
-            Toast.makeText(MainActivity.this, "点击Tag->" + ((TagTextView) tag).getText().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "鐐瑰嚮Tag->" + ((TagTextView) tag).getText().toString(), Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onLongPress(final TagViewGroup group) {
-            Toast.makeText(MainActivity.this, "点击中心圆", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "鐐瑰嚮涓績鍦?, Toast.LENGTH_SHORT).show();
         }
     };
 }
+

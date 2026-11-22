@@ -1,6 +1,6 @@
 ext{
-    supportLib = '27.0.2'
-    targetVersion = 27
+    supportLib = '1.6.1'
+    targetVersion = 34
     minVersion = 15
     picasso = '2.5.2'
     junit = '4.12'

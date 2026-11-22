@@ -4,7 +4,7 @@ import android.animation.Animator
 import android.content.Context
 import android.database.DataSetObserver
 import android.graphics.*
-import android.support.v4.view.GestureDetectorCompat
+import androidx.core.view.GestureDetectorCompat
 import android.util.AttributeSet
 import android.util.Property
 import android.view.GestureDetector
@@ -162,6 +162,7 @@ class TagViewGroup : ViewGroup {
                 }
                 DIRECTION.LEFT_CENTER//左中
                 -> mPath.lineTo(child.getLeft().toFloat(), child.getBottom().toFloat())
+                DIRECTION.CENTER -> { }
             }
             mPathMeasure.setPath(mPath, false)
             mPathMeasure.getSegment(0f, mPathMeasure.length * mLinesRatio, mDstPath, true)
@@ -308,7 +309,7 @@ class TagViewGroup : ViewGroup {
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         return mClickListener?.let {
-            return mGestureDetector.onTouchEvent(event)
+            return mGestureDetector.onTouchEvent(event!!)
         } ?: super.onTouchEvent(event)
     }
 
@@ -360,7 +361,7 @@ class TagViewGroup : ViewGroup {
             return true
         }
 
-        override fun onScroll(e1: MotionEvent, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
+        override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
             mScrollListener?.let {
                 var currentX = mCenterX - distanceX
                 var currentY = mCenterY - distanceY

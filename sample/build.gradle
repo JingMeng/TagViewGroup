@@ -2,35 +2,39 @@ apply plugin: 'com.android.application'
 apply from: new File('../dependence.gradle')
 
 android {
+    namespace 'com.licrafter.sample'
     compileSdkVersion project.ext.targetVersion
-    buildToolsVersion "${project.ext.supportLib}"
+    
     defaultConfig {
         applicationId 'com.licrafter.sample'
         minSdkVersion project.ext.minVersion
         targetSdkVersion project.ext.targetVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
     }
     productFlavors {
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    api "com.android.support:appcompat-v7:${project.ext.supportLib}"
-    api "com.android.support:design:${project.ext.supportLib}"
+    api "androidx.appcompat:appcompat:1.6.1"
+    api "com.google.android.material:material:1.4.0"
     api "com.squareup.picasso:picasso:${project.ext.picasso}"
-    testCompile "junit:junit:${project.ext.junit}"
+    testImplementation "junit:junit:${project.ext.junit}"
     //implementation "com.github.shellljx:TagViewGroup:${project.ext.tagViewGroup}"
     implementation project(path: ':library')
 }
+
+
